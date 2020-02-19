@@ -102,7 +102,4 @@ public class UsGuri {
      *  Observe que no exemplo que retorna objetos temos uma palavra reservada chamada 'return'. O que vem depois dessa palavra que sera retornado.
      *
      */
-    public String fala() {
-        return null;
-    }
 }
