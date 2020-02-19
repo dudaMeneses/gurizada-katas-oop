@@ -3,7 +3,6 @@ package com.duda.kata.gurizada;
 import org.junit.jupiter.api.*;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -99,8 +98,8 @@ public class Tests {
         try {
             Class<?> clazz = Class.forName("com.duda.kata.gurizada.Guri");
 
-            clazz.getDeclaredConstructor().newInstance("Duda", 31);
-        } catch (ReflectiveOperationException e) {
+            clazz.getDeclaredConstructor(String.class, Integer.class).newInstance("Duda", 31);
+        } catch (Exception e) {
             fail("Crie um construtor COM OS PARAMETROS 'nome' e 'idade', dos seus respectivos tipos, na classe 'Guri' dentro do package 'com.duda.kata.gurizada'. Em caso de duvidas, siga para a Dica #3");
         }
     }
@@ -153,11 +152,10 @@ public class Tests {
 
             Field field = obj.getClass().getDeclaredField("nome");
 
-            field.get(obj);
-
-            fail("Transforme o atributo 'nome' em escopo 'private' na classe 'Guri' dentro do package 'com.duda.kata.gurizada'. Em caso de duvidas, siga para a Dica #2");
-        } catch (IllegalAccessException ignored) {
-
+            assertFalse(
+                    field.canAccess(obj),
+                    "Transforme o atributo 'nome' em escopo 'private' na classe 'Guri' dentro do package 'com.duda.kata.gurizada'. Em caso de duvidas, siga para a Dica #2"
+            );
         } catch (ReflectiveOperationException e) {
             fail("Verifique se nao existe nenhum teste a ser corrigido nos passos anteriores");
         }
@@ -170,7 +168,7 @@ public class Tests {
         try {
             Class<?> clazz = Class.forName("com.duda.kata.gurizada.Guri");
 
-            Object obj = clazz.getDeclaredConstructor().newInstance("Duda", 31);
+            Object obj = clazz.getDeclaredConstructor(String.class, Integer.class).newInstance("Duda", 31);
 
             Method method = clazz.getDeclaredMethod("getNome");
 
@@ -179,7 +177,7 @@ public class Tests {
                     method.invoke(obj),
                     "Crie um metodo 'getNome' que retorne um 'String', sendo este o atributo 'nome' na classe 'Guri' dentro do package 'com.duda.kata.gurizada'. Em caso de duvidas, siga para a Dica #5"
             );
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+        } catch (NoSuchMethodException e) {
             fail("Crie um metodo 'getNome' que retorne um 'String', sendo este o atributo 'nome' na classe 'Guri' dentro do package 'com.duda.kata.gurizada'. Em caso de duvidas, siga para a Dica #5");
         } catch (ReflectiveOperationException e){
             fail("Verifique se nao existe nenhum teste a ser corrigido nos passos anteriores");
@@ -205,7 +203,7 @@ public class Tests {
                     getMethod.invoke(obj),
                     "Crie um metodo 'setNome' que atribua o 'String' recebido ao atributo 'nome' da classe 'Guri' dentro do package 'com.duda.kata.gurizada'. Em caso de duvidas, siga para a Dica #5"
             );
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+        } catch (NoSuchMethodException e) {
             fail("Crie um metodo 'setNome' que atribua o 'String' recebido ao atributo 'nome' da classe 'Guri' dentro do package 'com.duda.kata.gurizada'. Em caso de duvidas, siga para a Dica #5");
         } catch (ReflectiveOperationException e){
             fail("Verifique se nao existe nenhum teste a ser corrigido nos passos anteriores");
