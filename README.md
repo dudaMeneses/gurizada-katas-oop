@@ -22,3 +22,18 @@ Uma vez tendo todos os pre-requisitos instalados, voce fara o seguinte:
 4. Abra o IntelliJ para resolver as licoes. Para isso, basta clicar em `Import Project`, selecionar a pasta do projeto e clicar em `Next` ate o `Finish`
 5. Resolva os desafios em ordem numerica, de outro modo perdera algumas dicas no meio do caminho
 > Dica: O passo #3 pode ser executado dentro do IntelliJ tambem (eh ate mais facil de visualizar tudo por ali). Basta clicar com o botao direito em cima do projeto e clicar em `Run 'All Tests'`
+
+## Conteudo
+- [x] Classe
+- [x] Atributo
+- [x] Objeto
+- [x] Metodo
+- [x] Encapsulamento
+- [ ] Associacao
+- [ ] Agregacao
+- [ ] Composicao
+- [ ] Heranca
+- [ ] Dependencia
+- [ ] Sobrescrita
+- [ ] Sobrecarga
+- [ ] Interface
