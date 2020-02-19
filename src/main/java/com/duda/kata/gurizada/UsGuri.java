@@ -102,4 +102,49 @@ public class UsGuri {
      *  Observe que no exemplo que retorna objetos temos uma palavra reservada chamada 'return'. O que vem depois dessa palavra que sera retornado.
      *
      */
+
+    /**
+     *  Dica #5:
+     *
+     *  <p>
+     *      Quando falamos de encapsulamento, isso quer dizer que estamos limitando o acesso aos nossos atributos e metodos de acordo com determinado contexto.
+     *      Para isso, declaramos diferentes escopos para diferentes especies de informacoes, por exemplo:
+     *
+     *      Possuo um metodo que pode ser acessado externamente chamado <b>isAdulto()</b>,
+     *      mas este metodo <b>isAdulto()</b> acessa o atributo <b>idade</b> da classe <b>Guri</b>.
+     *
+     *      Sendo assim, o codigo ficaria mais ou menos assim:
+     *  </p>
+     *
+     *  Ex.:
+     *  public Boolean isAdulto(){
+     *      if(isMaiorDeIdade()){
+     *          return true;
+     *      } else {
+     *          return false;
+     *      }
+     *  }
+     *
+     *  private Boolean isMaiorDeIdade(){
+     *      return this.idade > 17;
+     *  }
+     *
+     *  Perceba que neste codigo utilizamos um novo descritor, o 'this'. Ele nos garante que o que estamos utilizando e o atributo do escopo DA CLASSE,
+     *  e nao DO METODO, mas veremos isso mais tarde com mais detalhes.
+     *
+     *  Para definir o encapsulamento de atributos da classe, eh muito comum declararmos metodos publicos GET e SET, sendo estes:
+     *  - get: acesso a dados
+     *  - set: escrita de dados
+     *
+     *  Por exemplo:
+     *  public Integer getIdade(){
+     *      return this.idade;
+     *  }
+     *
+     *  public void setIdade(Integer idade){
+     *      this.idade = idade;
+     *      // a primeira idade eh com 'this', ou seja, da classe. A segunda SEM o 'this' porque esta se referindo ao parametro passado pelo metodo
+     *  }
+     *
+     */
 }
