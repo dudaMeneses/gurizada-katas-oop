@@ -36,4 +36,6 @@ Uma vez tendo todos os pre-requisitos instalados, voce fara o seguinte:
 - [ ] Dependencia
 - [ ] Sobrescrita
 - [ ] Sobrecarga
+- [ ] Polimorfismo
+- [ ] Abstracao
 - [ ] Interface
